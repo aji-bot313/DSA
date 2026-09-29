@@ -1,29 +1,20 @@
 public class Main {
     public static void main(String[] args) {
-        Singly_Linked_List<String> list = new Singly_Linked_List<>();
+        LinkedList list = new LinkedList();
 
-        // Adding elements
-        list.add("Apple");
-        list.add("Banana");
-        list.add("Cherry");
+        list.append(new Bird("Eagle"));
+        list.append(new Car("Amphibian"));
+        list.append(new Bird(99));
 
-        System.out.println("--- Initial List ---");
-        list.display();
-        System.out.println("Size: " + list.size());
+        System.out.println("Original list:");
+        list.print();
 
-        // Finding an element
-        System.out.println("\n--- Finding Banana ---");
-        Node<String> foundNode = list.find("Banana");
-        if (foundNode != null) {
-            System.out.println("Found: " + foundNode.get_data());
-        } else {
-            System.out.println("Not found");
-        }
+        System.out.println("After deleteFirst():");
+        list.deleteFirst();
+        list.print();
 
-        // Removing an element
-        System.out.println("\n--- Removing Banana ---");
-        list.remove("Banana");
-        list.display();
-        System.out.println("New Size: " + list.size());
+        System.out.println("After deleteLast():");
+        list.deleteLast();
+        list.print();
     }
 }
